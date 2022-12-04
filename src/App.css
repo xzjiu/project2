@@ -598,6 +598,14 @@ progress {
   content: "— ";
 }
 
+path {
+  pointer-events: all;
+}
+path:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
