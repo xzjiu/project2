@@ -106,8 +106,8 @@ function App() {
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-11 col-lg-9 col-xl-8">
               <div className="post-heading" style={{ zIndex: "2" }}>
-                <h1>HCI Project2</h1>
-                <h2 className="subheading">Inequality in Social justice</h2>
+                <h1>Gender Pay Gap</h1>
+                <h2 className="subheading">HCI P2 -- Inequality in Social Justice</h2>
                 <span className="meta">
                   Posted by
                   <a href="#!">
