@@ -2,7 +2,8 @@ import state_data from "./state_data";
 
 const mapOptions = () => {
   return {
-    title: { text: "Gender pay gap over USA" },
+    title: { text: "Gender pay gap over USA",
+    left: 'right'  },
     tooltip: {
       trigger: "item",
       showDelay: 0,

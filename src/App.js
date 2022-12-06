@@ -38,11 +38,29 @@ iterate through list
 
 function App() {
   echarts.registerMap("WORLD", worldMap);
-  echarts.registerMap("USA", usaMap);
+  echarts.registerMap("USA", usaMap, {
+    Alaska: {              
+        left: -131,
+        top: 25,
+        width: 15
+    },
+    Hawaii: {
+        left: -110,        
+        top: 28,
+        width: 5
+    },
+    'Puerto Rico': {      
+        left: -76,
+        top: 26,
+        width: 2
+    }
+});
 
   const WorldmapOptions = () => {
     return {
-      title: { text: "Gender pay gap over world" },
+      title: { text: "Gender pay gap over world",
+      left: 'right' 
+    },
       tooltip: {
         trigger: "item",
         showDelay: 0,
@@ -178,7 +196,11 @@ function App() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-11 col-lg-9 col-xl-8">
                 <h2 className="section-heading mb-4">Introduction</h2>
-                <ReactEcharts option={WorldmapOptions()} />
+                <ReactEcharts option={WorldmapOptions() }
+                 style={{
+                  height: '500px',
+                  width: '100%',
+                }} />
                 <p className="mt-10">
                   The average compensation differential between working women
                   and men is known as the gender pay gap or gender wage gap. The
@@ -222,7 +244,12 @@ function App() {
                     <Image src={WageGap} rounded width="80%" />
                   </center>
 
-                  <ReactEcharts option={usaMapOptions()} className="mt-4" />
+                  <ReactEcharts option={usaMapOptions()} 
+                  className="mt-4"
+                  style={{
+                    height: '500px',
+                    width: '100%',
+                  }} />
                   <p>
                     This graph shows each state's median yearly earnings for
                     women and men. When choosing different states, the graph
