@@ -323,8 +323,8 @@ function App() {
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
+                    <YAxis tickFormatter={(t) => `$${t}`} />
+                    <Tooltip formatter={(value) => `$${value}`} />
                     <Legend
                       verticalAlign="top"
                       wrapperStyle={{ lineHeight: "40px" }}
