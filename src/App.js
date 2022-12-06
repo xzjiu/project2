@@ -250,12 +250,10 @@ function App() {
                     }}
                   />
                   <p>
-                    This graph shows each state's median yearly earnings for
-                    women and men. When choosing different states, the graph
-                    also displays the wage gap between men and women based on
-                    the established median earnings of both gender groups. The
-                    color of the state determines the range of the wage gap,
-                    with the lightest of colors indicating a non-statistically
+                    This graph shows each state's male to female pay gaps based
+                    on median yearly earnings for women and men. The color of
+                    the state determines the range of the wage gap, with the
+                    lightest of colors indicating a non-statistically
                     significant gap and the darkest of colors indicating a wage
                     gap of $15,000 or higher. In 2019, the median earnings for
                     women around the United States was $43,394 and the median
