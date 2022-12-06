@@ -39,28 +39,26 @@ iterate through list
 function App() {
   echarts.registerMap("WORLD", worldMap);
   echarts.registerMap("USA", usaMap, {
-    Alaska: {              
-        left: -131,
-        top: 25,
-        width: 15
+    Alaska: {
+      left: -131,
+      top: 25,
+      width: 15,
     },
     Hawaii: {
-        left: -110,        
-        top: 28,
-        width: 5
+      left: -110,
+      top: 28,
+      width: 5,
     },
-    'Puerto Rico': {      
-        left: -76,
-        top: 26,
-        width: 2
-    }
-});
+    "Puerto Rico": {
+      left: -76,
+      top: 26,
+      width: 2,
+    },
+  });
 
   const WorldmapOptions = () => {
     return {
-      title: { text: "Gender pay gap over world",
-      left: 'right' 
-    },
+      title: { text: "Gender pay gap over world", left: "right" },
       tooltip: {
         trigger: "item",
         showDelay: 0,
@@ -175,12 +173,8 @@ function App() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-11 col-lg-9 col-xl-8">
                 <div className="post-heading" style={{ zIndex: "2" }}>
-                  <h1>Gender Pay Gap</h1>
-                  <h2 className="subheading">
-                    HCI P2 -- Inequality in Social Justice
-                  </h2>
+                  <h1>The Truth about the Gender Pay Gap</h1>
                   <span className="meta">
-                    Posted by
                     <a href="#!">
                       {" "}
                       Xinrui Zou, Rishi Jain, Matt Liu, Taylor Young
@@ -196,11 +190,13 @@ function App() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-11 col-lg-9 col-xl-8">
                 <h2 className="section-heading mb-4">Introduction</h2>
-                <ReactEcharts option={WorldmapOptions() }
-                 style={{
-                  height: '500px',
-                  width: '100%',
-                }} />
+                <ReactEcharts
+                  option={WorldmapOptions()}
+                  style={{
+                    height: "500px",
+                    width: "100%",
+                  }}
+                />
                 <p className="mt-10">
                   The average compensation differential between working women
                   and men is known as the gender pay gap or gender wage gap. The
@@ -244,12 +240,14 @@ function App() {
                     <Image src={WageGap} rounded width="80%" />
                   </center>
 
-                  <ReactEcharts option={usaMapOptions()} 
-                  className="mt-4"
-                  style={{
-                    height: '500px',
-                    width: '100%',
-                  }} />
+                  <ReactEcharts
+                    option={usaMapOptions()}
+                    className="mt-4"
+                    style={{
+                      height: "500px",
+                      width: "100%",
+                    }}
+                  />
                   <p>
                     This graph shows each state's median yearly earnings for
                     women and men. When choosing different states, the graph
@@ -358,8 +356,8 @@ function App() {
                   less than male workers across all NAICS sectors.
                 </p>
                 <h2 className="section-heading mb-4">
-                  Median earnings for women in 2021 were 83.1% of the
-                  median for men
+                  Median earnings for women in 2021 were 83.1% of the median for
+                  men
                 </h2>
                 <ResponsiveContainer width="100%" height={500}>
                   <LineChart
