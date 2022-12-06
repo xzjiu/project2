@@ -1,18 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import MultilineChart from "./views/MultilineChart";
 import portfolio from "./portfolio.json";
 import schc from "./SCHC.json";
 import vcit from "./VCIT.json";
 import { Container, Image, Col } from "react-bootstrap";
 import "./App.css";
-import USAMap from "react-usa-map";
-import worldMap from './data/world.json';
-import * as echarts from 'echarts';
+import worldMap from "./data/world.json";
+import usaMap from "./data/usa.json";
+import * as echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
 import WageGap from './data/WageGap.png';
 import Background from './data/pay-gap-coins.png';
 
+import genderIncomeDisparities from "./data/gender_income_disparities";
+import employment from "./data/employment";
+import average_earning_data from "./data/average_earning";
 import {
   LineChart,
   Line,
@@ -27,30 +29,24 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import data2 from "./data/google-news";
-
-import employment from "./data/employment"
-
-import average_earning_data from "./data/average_earning";
-
+import usaMapOptions from "./data/usaMapOptions";
 
 /* optional customization of filling per state and calling custom callbacks per state */
 const statesCustomConfig = () => {
   return {
     NJ: {
       fill: "navy",
-      clickHandler: event =>
-        console.log("Custom handler for NJ", event.target.dataset)
+      clickHandler: (event) =>
+        console.log("Custom handler for NJ", event.target.dataset),
     },
     NY: {
-      fill: "#CC0000"
+      fill: "#CC0000",
     },
     CA: {
-      fill: "black"
-    }
+      fill: "black",
+    },
   };
 };
-
 
 const portfolioData = {
   name: "Portfolio",
@@ -88,90 +84,93 @@ iterate through list
 
 */
 
-
-
 function App() {
-  const mapOptions = () => { return {
-    title: {text: 'Gender pay gap over world'},
-    tooltip: {
-      trigger: 'item',
+
+  echarts.registerMap("WORLD", worldMap);
+  echarts.registerMap("USA", usaMap);
+
+  const WorldmapOptions = () => {
+    return {
+      title: { text: "Gender pay gap over world" },
+      tooltip: {
+        trigger: "item",
         showDelay: 0,
-        transitionDuration: 0.2
-    },
-    visualMap: {
-      left: 'right',
+        transitionDuration: 0.2,
+      },
+      visualMap: {
+        left: "right",
         min: 3,
         max: 35,
         inRange: {
-        color: [
-          '#313695',
-          '#4575b4',
-          '#74add1',
-          '#abd9e9',
-          '#e0f3f8',
-          '#ffffbf',
-          '#fee090',
-          '#fdae61',
-          '#f46d43',
-          '#d73027',
-          '#a50026'
-        ]
-      },
-      text: ['High', 'Low'],
-        calculable: true
-    },
-    toolbox: {
-      show: true,
-        orient: 'vertical',
-        left: 'left',
-        top: 'top',
-        feature: {
-        dataView: { readOnly: false },
-        restore: {},
-        saveAsImage: {}
-      }
-    },
-    series: [
-      {
-        name: 'Gender pay gap over world',
-        type: 'map',
-        roam: true,
-        map: 'WORLD',
-        emphasis: {
-          label: {
-            show: true
-          }
+          color: [
+            "#313695",
+            "#4575b4",
+            "#74add1",
+            "#abd9e9",
+            "#e0f3f8",
+            "#ffffbf",
+            "#fee090",
+            "#fdae61",
+            "#f46d43",
+            "#d73027",
+            "#a50026",
+          ],
         },
-        data: [
-          { name:'Argentina', value:	6.3},
-          { name:'Australia', value:	15.3},
-          { name:'Austria', value:	12.4},
-          { name:'Belgium', value:	3.8},
-          { name:'Brazil', value:	9.1},
-          { name:'Bulgaria', value:	2.6},
-          { name:'Canada', value:	16.7},
-          { name:'Chile', value:	8.6},
-          { name:'Colombia', value:	4.0},
-          { name:'Costa Rica', value:	4.7},
-          { name:'Croatia'	, value:7.6},
-          { name:'Cyprus'	, value:16.6},
-          { name:'Czech Republic'	, value:11.5},
-          { name:'Denmark', value:	5.0},
-          { name:'Estonia', value:	19.6},
-          { name:'Finland', value:	16.0},
-          { name:'France', value:	11.8},
-          { name:'Germany', value:	14.2},
-          { name:'Greece', value:	5.9},
-          { name:'Hungary', value:	12.4},
-          { name:'Iceland', value:	13.0},
-          { name:'Ireland', value:	8.3},
-          { name:'Israel'	, value:24.3},
-          { name:'Italy'	, value:7.6},
-          { name:'Japan', value:	22.1},
-          { name:'South Korea', value:	31.1},
-          { name:'Latvia'	, value:19.8},
-          { name:'Lithuania', value:	9.3},
-          { name:'Malta', value:	11.1},
+        text: ["High", "Low"],
+        calculable: true,
+      },
+      toolbox: {
+        show: true,
+        orient: "vertical",
+        left: "left",
+        top: "top",
+        feature: {
+          dataView: { readOnly: false },
+          restore: {},
+          saveAsImage: {},
+        },
+      },
+      series: [
+        {
+          name: "Gender pay gap over the USA",
+          type: "map",
+          roam: true,
+          map: "WORLD",
+          emphasis: {
+            label: {
+              show: true,
+            },
+          },
+          data: [
+            { name:'Argentina', value:	6.3},
+            { name:'Australia', value:	15.3},
+            { name:'Austria', value:	12.4},
+            { name:'Belgium', value:	3.8},
+            { name:'Brazil', value:	9.1},
+            { name:'Bulgaria', value:	2.6},
+            { name:'Canada', value:	16.7},
+            { name:'Chile', value:	8.6},
+            { name:'Colombia', value:	4.0},
+            { name:'Costa Rica', value:	4.7},
+            { name:'Croatia'	, value:7.6},
+            { name:'Cyprus'	, value:16.6},
+            { name:'Czech Republic'	, value:11.5},
+            { name:'Denmark', value:	5.0},
+            { name:'Estonia', value:	19.6},
+            { name:'Finland', value:	16.0},
+            { name:'France', value:	11.8},
+            { name:'Germany', value:	14.2},
+            { name:'Greece', value:	5.9},
+            { name:'Hungary', value:	12.4},
+            { name:'Iceland', value:	13.0},
+            { name:'Ireland', value:	8.3},
+            { name:'Israel'	, value:24.3},
+            { name:'Italy'	, value:7.6},
+            { name:'Japan', value:	22.1},
+            { name:'South Korea', value:	31.1},
+            { name:'Latvia'	, value:19.8},
+            { name:'Lithuania', value:	9.3},
+            { name:'Malta', value:	11.1},
           { name:'Mexico', value:	12.5},
           { name:'Netherlands', value:	13.3},
           { name:'New Zealand', value:	6.7},
@@ -188,13 +187,9 @@ function App() {
           { name:'United Kingdom', value:	14.3},
           { name:'United States of America', value:	16.9},
         ]
-      }
-    ]
+        },
+      ],
   }}
-
-
-
-  echarts.registerMap('WORLD', worldMap)
 
   const [selectedItems, setSelectedItems] = useState([]);
   const legendData = [portfolioData, schcData, vcitData];
@@ -223,7 +218,9 @@ function App() {
             <div className="col-md-11 col-lg-9 col-xl-8">
               <div className="post-heading" style={{ zIndex: "2" }}>
                 <h1>Gender Pay Gap</h1>
-                <h2 className="subheading">HCI P2 -- Inequality in Social Justice</h2>
+                <h2 className="subheading">
+                  HCI P2 -- Inequality in Social Justice
+                </h2>
                 <span className="meta">
                   Posted by
                   <a href="#!">
@@ -241,7 +238,7 @@ function App() {
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-11 col-lg-9 col-xl-8">
               <h2 className="section-heading">Introduction</h2>
-              <ReactEcharts option={mapOptions()}/>
+              <ReactEcharts option={WorldmapOptions()}/>
               <p>
               The average compensation differential between working women and men is known as the gender pay gap or gender wage gap.
               The gender pay gap is an ongoing issue in the modern world. Despite the progress made over the past few decades, women still earn significantly less than men across all industries and job positions.
@@ -323,7 +320,28 @@ function App() {
       The graph depicts the gender pay gap, based on the North American Industry Classification System (NAICS) Working Sector, for both male and female workers. It covers 20 different SAICS sectors. Across all NAICS sectors, the gender pay gap is significant, with female workers earning an average of 35% less than their male counterparts. The % pay gap is widest in the Arts, Entertainment, and Recreation sector, where female workers earn 66% less than male workers according to the 2020 US Census Bureau data. It is followed closely by the Finance and Insurance sector where the average pay gap is around 61%. These are really significant differences. The smallest pay gap is in the Public Administration sector, where female workers earn 12% less than male workers. Overall, this data indicates that the gender pay gap is still a major issue in the United States, with female workers consistently earning less than male workers across all NAICS sectors.
 
       </p>
-              
+            
+
+              <ResponsiveContainer width="100%" height={500}>
+                <LineChart
+                  width={900}
+                  height={300}
+                  data={genderIncomeDisparities}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis domain={[65, 100]} />
+                  <Tooltip />
+                  <Legend />
+                  <Line type="monotone" dataKey="total" stroke="red" />
+                  <Line type="monotone" dataKey="white" stroke="orange" />
+                  <Line type="monotone" dataKey="black" stroke="green" />
+                  <Line type="monotone" dataKey="asian" stroke="#8884d8" />
+                  <Line type="monotone" dataKey="hispanic" stroke="purple" />
+                </LineChart>
+              </ResponsiveContainer>
+              <ReactEcharts option={usaMapOptions()} />
+
               {/* <USAMap
                 customize={statesCustomConfig()}
                 onClick={mapHandler}
