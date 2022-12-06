@@ -204,6 +204,7 @@ function App() {
     setSelectedItems(newSelectedItems);
   };
   return (
+    <>
     <Container fluid>
       <header
         className="masthead"
@@ -352,6 +353,24 @@ function App() {
         </div>
       </article>
     </Container>
+
+    <footer class="w-100 py-3 flex-shrink-0">
+      <hr/>
+        <div class="container py-3">
+            <div class="row gy-3 gx-5">
+            <div class="col-lg-2 col-md-2"></div>
+                <div class="col-lg-8 col-md-8">
+                    <h5 class="h1">Data Source</h5>
+                    <p class="small text-muted"> <a class="text-primary" href=""></a></p>
+                    <p class="small text-muted"> <a class="text-primary" href="https://data.oecd.org/earnwage/gender-wage-gap.htm"> Gender-wage-gap</a></p>
+                    <p class="small text-muted"> <a class="text-primary" href="https://qwiexplorer.ces.census.gov/static/explore.html?s=127628&v=bar&t=ac0&fc=true&st=US#x%3D0%26g%3D0=&x=0&g=0">Cencus QWI Explorer gender earning</a></p>
+                    <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved.</p>
+                </div>
+                <div class="col-lg-2 col-md-2"></div>
+            </div>
+        </div>
+    </footer>
+    </>
   );
 }
 
