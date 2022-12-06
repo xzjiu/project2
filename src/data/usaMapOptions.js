@@ -1,3 +1,5 @@
+import state_data from "./state_data";
+
 const mapOptions = () => {
   return {
     title: { text: "Gender pay gap over USA" },
@@ -8,8 +10,8 @@ const mapOptions = () => {
     },
     visualMap: {
       left: "right",
-      min: 3,
-      max: 35,
+      min: 5000,
+      max: 25000,
       inRange: {
         color: [
           "#313695",
@@ -50,7 +52,13 @@ const mapOptions = () => {
             show: true,
           },
         },
-        data: [],
+        data: state_data.map((dat) => {
+          console.log(dat.State, dat["Wage Gap"]);
+          return {
+            name: dat.State,
+            value: dat["Wage Gap"],
+          };
+        }),
       },
     ],
   };
