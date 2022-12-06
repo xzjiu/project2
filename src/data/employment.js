@@ -9,15 +9,15 @@ const data = [
 {name :'Transportation and Warehousing', man:5102	, woman:3747},
 {name :'Information', man:	11326, woman:	8008},
 {name :'Finance and Insurance', man:11496	, woman:6121},
-{name :'Real Estate and Rental and Leasing', man:5635, woman:4392},
-{name :'Professional, Scientific, and Technical Services', man:	9921	, woman:6460},
-{name :'Management of Companies and Enterprises', man:10017	, woman:6299},
-{name :'Administrative and Support and Waste Management and Remediation Services', man:	4416	, woman:3505},
+{name :'Real Estate', man:5635, woman:4392},
+{name :'Professional & Technical Services', man:	9921	, woman:6460},
+{name :'Management', man:10017	, woman:6299},
+{name :'Administrative and Support', man:	4416	, woman:3505},
 {name :'Educational Services', man:	5871, woman:	4175},
-{name :'Health Care and Social Assistance'	, man:6939	, woman:3997},
-{name :'Arts, Entertainment, and Recreation', man:	4957	, woman:2510},
+{name :'Health Care'	, man:6939	, woman:3997},
+{name :'Creative Sector', man:	4957	, woman:2510},
 {name :'Accommodation and Food Services'	, man:2291	, woman:1849},
-{name :'Other Services (except Public Administration)', man:4427	, woman:3230},
+{name :'Other Services', man:4427	, woman:3230},
 ]
 
 export default data;
