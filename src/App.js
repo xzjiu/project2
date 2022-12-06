@@ -277,8 +277,8 @@ function App() {
                   >
                     <CartesianGrid strokeDasharray="8 8" />
                     <XAxis dataKey="name" padding={{ left: 30, right: 30 }} />
-                    <YAxis />
-                    <Tooltip />
+                    <YAxis tickFormatter={(t) => `$${t}`} />
+                    <Tooltip formatter={(value) => `$${value}`} />
                     <Legend />
                     <ReferenceLine
                       x="> Bachelor's"
