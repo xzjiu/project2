@@ -251,14 +251,15 @@ function App() {
                   />
                   <p>
                     This graph shows each state's male to female pay gaps based
-                    on median yearly earnings for women and men. The color of
-                    the state determines the range of the wage gap, with the the
-                    warmer of colors indicating a wage gap of $15,000 or higher
-                    and the colder of colors indicate a wage gap of $15000 or
-                    less. In 2019, the median earnings for women around the
-                    United States was $43,394 and the median earnings for men
-                    was $53,544. As a result, the national wage gap by sex in
-                    the US in 2019 was $10,150.
+                    on median yearly earnings for women and men in 2019 from the
+                    American Community Survey. The color of the state determines
+                    the range of the wage gap, with the the warmer of colors
+                    indicating a wage gap of $15,000 or higher and the colder of
+                    colors indicate a wage gap of $15000 or less. In 2019, the
+                    median earnings for women around the United States was
+                    $43,394 and the median earnings for men was $53,544. As a
+                    result, the national wage gap by sex in the US in 2019 was
+                    $10,150.
                   </p>
                 </div>
                 <h2 className="section-heading mb-4">Education Vs Sex</h2>
@@ -391,14 +392,14 @@ function App() {
                 </ResponsiveContainer>
                 <p>
                   This graph shows the ratio of women-to-men earnings by race
-                  and ethnicity using averages of the years 2000 to 2021. The
-                  graph shows that the earnings ratio varied by race and
-                  ethnicity, but ultimately, the graph showed that women
-                  annually earned less than men, with the median earnings for
-                  women being $912, 83.1% of that of men. Specifically, for the
-                  earnings ratio, White women earned 82.2% as much as their male
-                  counterparts, Black women earned 94.1%, Asian women earned
-                  78.5% and 87.6% for Hispanic women.
+                  and ethnicity using averages of the years 2000 to 2021 by the
+                  Bureau of Labor Statistics. The graph shows that the earnings
+                  ratio varied by race and ethnicity, but ultimately, the graph
+                  showed that women annually earned less than men, with the
+                  median earnings for women being $912, 83.1% of that of men.
+                  Specifically, for the earnings ratio, White women earned 82.2%
+                  as much as their male counterparts, Black women earned 94.1%,
+                  Asian women earned 78.5% and 87.6% for Hispanic women.
                 </p>
                 <h2 className="section-heading mb-4">Conclusion</h2>
                 <p>
