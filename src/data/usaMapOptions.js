@@ -2,12 +2,12 @@ import state_data from "./state_data";
 
 const mapOptions = () => {
   return {
-    title: { text: "Gender pay gap over USA",
-    left: 'right'  },
+    title: { text: "Gender pay gap over USA", left: "right" },
     tooltip: {
       trigger: "item",
       showDelay: 0,
       transitionDuration: 0.2,
+      formatter: "{b} - ${c}",
     },
     visualMap: {
       left: "right",

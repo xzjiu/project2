@@ -173,7 +173,8 @@ function App() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-11 col-lg-9 col-xl-8">
                 <div className="post-heading" style={{ zIndex: "2" }}>
-                  <h1>The Truth about the Gender Pay Gap</h1>
+                  <h1>The Truth about</h1>
+                  <h1>Gender Pay Gap</h1>
                   <span className="meta">
                     <a href="#!">
                       {" "}
