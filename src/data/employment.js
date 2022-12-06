@@ -1,6 +1,6 @@
 const data = [
-{name: 'Agriculture, Forestry, Fishing and Hunting', man: 3773, woman: 2877},
-{name : 'Mining, Quarrying, and Oil and Gas Extraction', man: 7880, woman:	6969},
+{name: 'Agricultural', man: 3773, woman: 2877},
+{name :'Mining', man: 7880, woman:	6969},
 {name :'Utilities'	, man:9400, woman:7023},
 {name :'Construction', man:	5799	, woman:4370},
 {name :'Manufacturing', man: 6208, woman:4783},

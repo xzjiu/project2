@@ -4,12 +4,14 @@ import MultilineChart from "./views/MultilineChart";
 import portfolio from "./portfolio.json";
 import schc from "./SCHC.json";
 import vcit from "./VCIT.json";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Image, Col } from "react-bootstrap";
 import "./App.css";
 import USAMap from "react-usa-map";
 import worldMap from './data/world.json';
 import * as echarts from 'echarts';
 import ReactEcharts from "echarts-for-react";
+import WageGap from './data/WageGap.png';
+import Background from './data/pay-gap-coins.png';
 
 import {
   LineChart,
@@ -141,50 +143,50 @@ function App() {
           }
         },
         data: [
-          { name:'Argentina', value:	6.250},
-          { name:'Australia', value:	15.312},
-          { name:'Austria', value:	12.382},
-          { name:'Belgium', value:	3.798},
-          { name:'Brazil', value:	9.091},
-          { name:'Bulgaria', value:	2.555},
-          { name:'Canada', value:	16.667},
-          { name:'Chile', value:	8.596},
-          { name:'Colombia', value:	4.000},
-          { name:'Costa Rica', value:	4.725},
-          { name:'Croatia'	, value:7.575},
-          { name:'Cyprus'	, value:16.582},
-          { name:'Czech Republic'	, value:11.519},
-          { name:'Denmark', value:	4.994},
-          { name:'Estonia', value:	19.602},
-          { name:'Finland', value:	15.979},
-          { name:'France', value:	11.824},
-          { name:'Germany', value:	14.203},
-          { name:'Greece', value:	5.909},
-          { name:'Hungary', value:	12.350},
-          { name:'Iceland', value:	12.901},
-          { name:'Ireland', value:	8.284},
-          { name:'Israel'	, value:24.319},
-          { name:'Italy'	, value:7.640},
-          { name:'Japan', value:	22.114},
-          { name:'South Korea', value:	31.065},
-          { name:'Latvia'	, value:19.759},
-          { name:'Lithuania', value:	9.328},
-          { name:'Malta', value:	11.094},
-          { name:'Mexico', value:	12.500},
-          { name:'Netherlands', value:	13.329},
-          { name:'New Zealand', value:	6.667},
-          { name:'Norway', value:	4.601},
-          { name:'Poland', value:	8.691},
-          { name:'Portugal', value:	11.717},
-          { name:'Romania', value:	3.304},
-          { name:'Slovak Republic', value:	11.700},
-          { name:'Slovenia', value:	8.195},
-          { name:'Spain', value:	8.094},
-          { name:'Sweden', value:	7.418},
-          { name:'Switzerland', value:	13.803},
-          { name:'Türkiye', value:	9.981},
-          { name:'United Kingdom', value:	14.349},
-          { name:'United States of America', value:	16.864},
+          { name:'Argentina', value:	6.3},
+          { name:'Australia', value:	15.3},
+          { name:'Austria', value:	12.4},
+          { name:'Belgium', value:	3.8},
+          { name:'Brazil', value:	9.1},
+          { name:'Bulgaria', value:	2.6},
+          { name:'Canada', value:	16.7},
+          { name:'Chile', value:	8.6},
+          { name:'Colombia', value:	4.0},
+          { name:'Costa Rica', value:	4.7},
+          { name:'Croatia'	, value:7.6},
+          { name:'Cyprus'	, value:16.6},
+          { name:'Czech Republic'	, value:11.5},
+          { name:'Denmark', value:	5.0},
+          { name:'Estonia', value:	19.6},
+          { name:'Finland', value:	16.0},
+          { name:'France', value:	11.8},
+          { name:'Germany', value:	14.2},
+          { name:'Greece', value:	5.9},
+          { name:'Hungary', value:	12.4},
+          { name:'Iceland', value:	13.0},
+          { name:'Ireland', value:	8.3},
+          { name:'Israel'	, value:24.3},
+          { name:'Italy'	, value:7.6},
+          { name:'Japan', value:	22.1},
+          { name:'South Korea', value:	31.1},
+          { name:'Latvia'	, value:19.8},
+          { name:'Lithuania', value:	9.3},
+          { name:'Malta', value:	11.1},
+          { name:'Mexico', value:	12.5},
+          { name:'Netherlands', value:	13.3},
+          { name:'New Zealand', value:	6.7},
+          { name:'Norway', value:	4.6},
+          { name:'Poland', value:	8.7},
+          { name:'Portugal', value:	11.72},
+          { name:'Romania', value:	3.3},
+          { name:'Slovak Republic', value:	11.7},
+          { name:'Slovenia', value:	8.2},
+          { name:'Spain', value:	8.1},
+          { name:'Sweden', value:	7.4},
+          { name:'Switzerland', value:	13.8},
+          { name:'Türkiye', value:	10.0},
+          { name:'United Kingdom', value:	14.3},
+          { name:'United States of America', value:	16.9},
         ]
       }
     ]
@@ -213,7 +215,7 @@ function App() {
         style={{
           zIndex: "1",
           backgroundImage:
-            "url('https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg')",
+            "url('https://visme.co/blog/wp-content/uploads/Gender-Pay-Gap-header.gif')",
         }}
       >
         <div className="container-fluid position-relative px-4 px-lg-5">
@@ -238,25 +240,30 @@ function App() {
         <div className="container-fluid px-4 px-lg-5">
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-11 col-lg-9 col-xl-8">
-              <h2 className="section-heading">Background</h2>
+              <h2 className="section-heading">Introduction</h2>
               <ReactEcharts option={mapOptions()}/>
               <p>
-                place holder text: Inspired by the cohesive developer experience
-                provided by Ember.js and Elm, the folks at Facebook wanted to
-                provide an easy, opinionated way forward. They created a new way
-                to develop React apps, create-react-app. In the three weeks
-                since initial public release, it has received tremendous
-                community awareness (over 8,000 GitHub stargazers) and support
-                (dozens of pull requests).{" "}
+              The average compensation differential between working women and men is known as the gender pay gap or gender wage gap.
+              The gender pay gap is an ongoing issue in the modern world. Despite the progress made over the past few decades, women still earn significantly less than men across all industries and job positions.
+              According to data from the United States Department of Labor, women earned an average of 83.1¢ for every dollar earned by men in 2021.
+              This discrepancy in pay is even more severe for women of color, with African American women earning only 62¢ and Latina women earning only 54¢ for each dollar earned by men.
               </p>
-              <h2 className="section-heading">Result</h2>
-              <p> place holder</p>
+              <p> The gender pay gap is a complex issue with a multitude of contributing factors. Research suggests that the key components that sustain the wage gaps are:</p>
               <blockquote className="blockquote">
-                The dreams of yesterday are the hopes of today and the reality
-                of tomorrow. Science has not yet mastered prophecy. We predict
-                too much for the next year and yet far too little for the next
-                ten.
+                <p> 1.Gender discrimination  </p>
+                <p> 2.Unequal access to resources </p>
+                <p> 3.Lack of institutional support</p>
+
               </blockquote>
+
+              <p>
+              In addition, the effects of the gender pay gap go beyond personal complaints; they result in decreased economic productivity, smaller pensions for women, and fewer educational chances. The causes and effects of the gender wage gap will be covered in more detail later on in this article. This essay will explore the causes and effects of the gender pay gap and discuss potential solutions to reduce wage disparities between men and women.
+
+              </p>
+              <center>
+              <Image src={WageGap} rounded width="80%"/>
+              </center>
+              <h2 className="section-heading">Education Vs Sex</h2>
 
               <ResponsiveContainer width='100%' height={500}>
                 <LineChart 
@@ -281,12 +288,12 @@ function App() {
               <Line type="monotone" dataKey="woman" stroke="#82ca9d" />
             </LineChart>
           </ResponsiveContainer>
+          
               <p>
-                Spaceflights cannot be stopped. This is not the work of any one
-                man or even a group of men. It is a historical process which
-                mankind is carrying out in accordance with the natural laws of
-                human development.
+              The graph shows the gender pay gap based on the level of education and sex of the person in 2020. It depicts the wage gap for different levels of education such as High School, College/Associate Degree, Bachelor's Degree, or advanced degrees. It can be seen that women with a Bachelor's degree or advanced degrees have the highest gender average pay gap, with a gap of 47%. The lowest pay gap is for women with age 24 or less i.e. of almost 26%. Women with a high school diploma or less, a high school degree, or a college degree have a gap somewhere between 34% - 37%. This keeps the average of all the education levels at 36%. Overall, the gender pay gap is highest for women with a Bachelor's degree and lowest for women aged 24 or younger.
               </p>
+
+              <h2 className="section-heading">NAICS Sector vs Sex</h2>
 
               <ResponsiveContainer width='100%' height={500}>
         <BarChart
@@ -311,6 +318,11 @@ function App() {
           <Bar dataKey="woman" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
+
+      <p>
+      The graph depicts the gender pay gap, based on the North American Industry Classification System (NAICS) Working Sector, for both male and female workers. It covers 20 different SAICS sectors. Across all NAICS sectors, the gender pay gap is significant, with female workers earning an average of 35% less than their male counterparts. The % pay gap is widest in the Arts, Entertainment, and Recreation sector, where female workers earn 66% less than male workers according to the 2020 US Census Bureau data. It is followed closely by the Finance and Insurance sector where the average pay gap is around 61%. These are really significant differences. The smallest pay gap is in the Public Administration sector, where female workers earn 12% less than male workers. Overall, this data indicates that the gender pay gap is still a major issue in the United States, with female workers consistently earning less than male workers across all NAICS sectors.
+
+      </p>
               
               {/* <USAMap
                 customize={statesCustomConfig()}

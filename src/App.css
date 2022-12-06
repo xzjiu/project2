@@ -11150,10 +11150,13 @@ header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
   color: #fff;
+  /* margin-top: 20; */
+  position: relative; 
+  top: -50%;
 }
 header.masthead .page-heading,
 header.masthead .site-heading {
-  text-align: center;
+  text-align:center;
 }
 header.masthead .page-heading h1, header.masthead .page-heading .h1,
 header.masthead .site-heading h1,
