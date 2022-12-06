@@ -238,7 +238,7 @@ function App() {
                 </p>
                 <div>
                   <h2 className="section-heading mb-8">
-                    Graph: What is the gender pay gap in your state?
+                    What is the gender pay gap in your state?
                   </h2>
                   <center>
                     <Image src={WageGap} rounded width="80%" />
@@ -358,7 +358,7 @@ function App() {
                   less than male workers across all NAICS sectors.
                 </p>
                 <h2 className="section-heading mb-4">
-                  Graph: Median earnings for women in 2021 were 83.1% of the
+                  Median earnings for women in 2021 were 83.1% of the
                   median for men
                 </h2>
                 <ResponsiveContainer width="100%" height={500}>
